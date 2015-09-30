@@ -1,6 +1,7 @@
 # church_encoding_js
-Church Encoding implementation in the subset of javascript
+Church Encoding implementation in the minimal λ-calculus subset of javascript
 
+Theory foundation:
 zero  = Lf.Lx.x     
 one   = Lf.Lx.(f x)      
 two   = Lf.Lx.(f (f x))      
