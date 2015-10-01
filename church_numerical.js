@@ -1,29 +1,45 @@
 //strict subset of javascript include lambda, single parameter function, function call
+//<exp> = <var>
+//      |  ( (<var>) => <exp>) // function definition
+//      |  <exp>(<exp>) //function call
+
 //use arrow function definition in ES6
 //the following is the  same as: void = function(x){return x;} 
-var void = x => x;
+//reference (for predecessor): http://www.cs.unc.edu/~stotts/204/Lambda/church.html
 
-var zero = f => z => z; //z indicate zero
-var one = f => z => f(z);
-var two = f => z => f( f(z) );
-var inc = n => f => z => n(f) (f (z) ); //n indicate the input function
+var zero = f => x => x; 
+var one = f => x => f(x);
+var two = f => x => f(f(x));
 
-//////// helper function - doesn not restrict to the subset ///////////
+var inc = n => f => x => n(f) (f(x)); //n indicate the input function
+
+//only single parameter function is allowed
+var add = n => m => f => x => n(f) (m(f)(x));
+var mul = n => m => x => n(m(x));
+var pow = n => m => m(n);
+
+//define predecessor
+var first = x => y => x;
+var second = x => y => y;
+var pair = x => y => f => f(x)(y);
+var prefn = f => p => pair(f(p(first))) (p(first));
+var pred = n => f => x => n(prefn(f))(pair(x)(x)) (second);
+
+////////////  helper function - doesn not restrict to the subset ///////////
 var numberValue = n => n( x => x+1 )(0);
 
 // short cut to generate n, used 'for which is outside the minimal subset
-var number = n => f => {
-    return function(z) { 
-      for(var i=0; i<n; i++) 
-        z = f(z); 
-      return z;}  
-    };
+var number = n => f => x => {
+      for(var i=0; i<n; i++) x = f(x);
+      return x;}
 
-console.log( 'value of zero: ' + numberValue( zero ));
-console.log( 'value of one: ' + numberValue( inc(zero) ));
-console.log( 'value of 10: ' + numberValue( number(10) ));
-
-
-
+// testing
+console.log( 'value of 0 = ' + numberValue( zero ) );
+console.log( 'value of 0+1 = ' + numberValue( inc(zero) ) );
+console.log( 'value of 1+2 = ' + numberValue( add(one)(two) ) );
+console.log( 'value of 2*3 = ' + numberValue( mul(two)(inc(two)) ) );
+console.log( 'value of 2^3 = ' + numberValue( pow(two)(inc(two)) ) );
+console.log( 'value of 3^2 = ' + numberValue( pow(inc(two))(two) ) );
+console.log( 'value of 2-1 = ' + numberValue( pred(two) ) );
 
 
