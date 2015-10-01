@@ -1,4 +1,4 @@
-//strict subset of javascript include lambda, single parameter function, function call
+//strict subset of javascript include variable references, anonymous single parameter function, function call
 //<exp> = <var>
 //      |  ( (<var>) => <exp>) // function definition
 //      |  <exp>(<exp>) //function call
