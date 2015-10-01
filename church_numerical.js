@@ -4,7 +4,7 @@
 //      |  <exp>(<exp>) //function call
 
 //use arrow function definition in ES6
-//the following is the  same as: void = function(x){return x;} 
+//the following is the var Void = function(x){return x;} is the same as var Void
 //reference (for predecessor): http://www.cs.unc.edu/~stotts/204/Lambda/church.html
 
 var zero = f => x => x; 
@@ -12,6 +12,7 @@ var one = f => x => f(x);
 var two = f => x => f(f(x));
 
 var inc = n => f => x => n(f) (f(x)); //n indicate the input function
+//var inc = n => f => x => f(n(f)(x)); //same as previous line
 
 //only single parameter function is allowed
 var add = n => m => f => x => n(f) (m(f)(x));
