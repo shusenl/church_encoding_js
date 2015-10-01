@@ -7,10 +7,10 @@
 
 ##### lambda calculus:
 ```
-xero = Lf.Lx.x     
-one  = Lf.Lx.(f x)      
-two  = Lf.Lx.(f (f x))      
-inc  = Ln.Lf.Lx.(f ((n f) x)) 
+xero = λf.λx.x     
+one  = λf.λx.f x
+two  = λf.λx.f(f x)
+inc  = λn.λf.λx.f(n f x)
 ```
 
 
