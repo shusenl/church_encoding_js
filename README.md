@@ -1,7 +1,7 @@
 # church_encoding_js
 
 ##### Church Encoding implementation in the minimal λ-calculus subset of javascript. 
-##### With the new syntax ([arrow function =>](https://developer.moxilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)) introduced in ES6, we may have one of the most concise expression of lambda calculus in any language.
+##### With the new syntax ([arrow function =>](http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)) introduced in ES6, we may have one of the most concise expression of lambda calculus in any language.
 
 
 
