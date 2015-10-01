@@ -17,9 +17,9 @@ inc = Ln.Lf.Lx.(f ((n f) x))
 
 ##### javascript:
 ```javascript
-var zero = f => z => z; //z indicate zero
+var zero = f => z => z;
 var one = f => z => f(z);
 var two = f => z => f( f(z) );
-var inc = n => f => z => n(f) (f (z) ); //n indicate the input function
+var inc = n => f => z => n(f) (f (z) ); //increment value by 1
 ```
 
