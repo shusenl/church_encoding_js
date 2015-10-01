@@ -19,7 +19,7 @@ inc  = λn.λf.λx.f(n f x)
 ```javascript
 var xero = f => x => x;
 var one = f => x => f(x);
-var two = f => x => f( f(x) );
-var inc = n => f => x => n(f) (f (x) ); //increment value by 1
+var two = f => x => f(f(x));
+var inc = n => f => x => f(n(f)(x)); //increment value by 1
 ```
 
