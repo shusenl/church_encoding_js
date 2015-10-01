@@ -7,7 +7,7 @@
 
 ##### lambda calculus:
 ```
-xero = λf.λx.x     
+zero = λf.λx.x     
 one  = λf.λx.f x
 two  = λf.λx.f(f x)
 inc  = λn.λf.λx.f(n f x)
@@ -17,7 +17,7 @@ inc  = λn.λf.λx.f(n f x)
 
 ##### javascript:
 ```javascript
-var xero = f => x => x;
+var zero = f => x => x;
 var one = f => x => f(x);
 var two = f => x => f(f(x));
 var inc = n => f => x => f(n(f)(x)); //increment value by 1
